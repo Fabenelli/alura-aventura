@@ -3,142 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Mistério do El Dorado</title>
+<title>Aventura El Dorado</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 20px;
-    }
-    .container-aventura {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .estagio {
-        display: none;
-    }
-    .estagio.visivel {
-        display: block;
-    }
-    .opcao-escolha {
-        display: block;
-        margin: 10px 0;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: white;
-    }
-    .opcao-escolha:hover {
-        background-color: #0056b3;
-    }
-    img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
+
+body{
+    font-family: Arial, sans-serif;
+    background:#ececec;
+    padding:20px;
+}
+
+.container-aventura{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.estagio{
+    display:none;
+}
+
+.visivel{
+    display:block;
+}
+
+.opcao-escolha{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.opcao-escolha:hover{
+    background:#0056b3;
+}
+
+#mensagem{
+    margin-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.correta{
+    color:green;
+}
+
+.errada{
+    color:red;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
 </style>
 </head>
 <body>
+
 <div class="container-aventura">
 
-    <!-- Cenário Inicial -->
+    <div id="mensagem"></div>
+
+    <!-- PASSO 0 -->
     <section class="estagio visivel" id="passo-0">
-        <img src="https://thumbs.dreamstime.com/b/mapa-dos-piratas-do-tesouro-rota-com-uma-cruz-vermelha-objetivo-o-caminho-e-estrada-folha-de-papel-antiga-ilustra%C3%A7%C3%A3o-plana-178208590.jpg" alt="Desenho de um mapa antigo desgastado">
-        <p>Durante uma pesquisa na biblioteca do colégio, encontrei um diário de bordo antigo de um navegador. O texto mencionava as coordenadas de uma civilização esquecida no Brasil. Sem pensar duas vezes, arrumei as malas para seguir o rastro!</p>
-        <button class="opcao-escolha" data-proximo="1" data-resposta="correta">Partir rumo ao Rio de Janeiro</button>
-        <button class="opcao-escolha" data-proximo="2" data-resposta="errada">Desembarcar em Pernambuco</button>
+
+        <img src="https://thumbs.dreamstime.com/b/mapa-dos-piratas-do-tesouro-rota-com-uma-cruz-vermelha-objetivo-o-caminho-e-estrada-folha-de-papel-antiga-ilustra%C3%A7%C3%A3o-plana-178208590.jpg">
+
+        <p>
+            Durante uma pesquisa na biblioteca do colégio, encontrei um diário antigo.
+        </p>
+
+        <button class="opcao-escolha"
+        data-proximo="1"
+        data-resposta="correta">
+
+        Partir rumo ao Rio de Janeiro
+
+        </button>
+
+        <button class="opcao-escolha"
+        data-proximo="2"
+        data-resposta="errada">
+
+        Desembarcar em Pernambuco
+
+        </button>
+
     </section>
 
-    <!-- Rota Rio de Janeiro -->
+    <!-- PASSO 1 -->
     <section class="estagio" id="passo-1">
-        <p>Seu ponto de partida é a capital carioca. Você decide subir a trilha da Pedra da Gávea logo cedo para decifrar a primeira pista geográfica.</p>
-        <button class="opcao-escolha" data-proximo="3" data-resposta="correta">Subir até o topo e investigar as rochas</button>
-        <button class="opcao-escolha" data-proximo="4" data-resposta="errada">Abandonar a expedição e voltar para casa</button>
+
+        <p>
+            Você decide subir a Pedra da Gávea.
+        </p>
+
+        <button class="opcao-escolha"
+        data-proximo="3"
+        data-resposta="correta">
+
+        Investigar as rochas
+
+        </button>
+
+        <button class="opcao-escolha"
+        data-proximo="4"
+        data-resposta="errada">
+
+        Voltar para casa
+
+        </button>
+
     </section>
 
-    <!-- Rota Pernambuco -->
+    <!-- PASSO 2 -->
     <section class="estagio" id="passo-2">
-        <p>No litoral pernambucano, seu destino é o centro histórico de Olinda. O diário afirma que a chave para a localização exata está escondida em um marco antigo da cidade. Por onde começa?</p>
-        <button class="opcao-escolha" data-proximo="5" data-resposta="correta">Vasculhar os mosteiros antigos</button>
-        <button class="opcao-escolha" data-proximo="6" data-resposta="errada">Caminhar pelas praias da região</button>
+
+        <p>
+            Você foi para Pernambuco.
+        </p>
+
+        <button class="opcao-escolha"
+        data-proximo="5"
+        data-resposta="correta">
+
+        Procurar mosteiros
+
+        </button>
+
     </section>
 
-    <!-- Topo do Rio de Janeiro -->
+    <!-- PASSO 3 -->
     <section class="estagio" id="passo-3">
-        <p>No cume da montanha, você nota inscrições entalhadas no relevo. Os símbolos indicam que o próximo enigma está enterrado na Floresta Amazônica.</p>
-        <button class="opcao-escolha" data-proximo="7" data-resposta="correta">Comprar passagem para o Amazonas</button>
+
+        <p>
+            Você encontrou pistas na montanha.
+        </p>
+
     </section>
 
-    <!-- Fim de Jogo: Desistência -->
+    <!-- PASSO 4 -->
     <section class="estagio" id="passo-4">
-        <img src="img/fim-jornada.png" alt="Pessoa olhando pela janela do quarto, desistindo do sonho">
-        <p>O cansaço fala mais alto. Você decide que os riscos são grandes demais e desiste da busca, guardando o diário na gaveta com uma eterna dúvida.</p>
+
+        <p>
+            Fim de jogo.
+        </p>
+
     </section>
 
-    <!-- Igrejas de Olinda -->
+    <!-- PASSO 5 -->
     <section class="estagio" id="passo-5">
-        <p>Entre as paredes de pedra de uma capela, você localiza um pergaminho guardado sob uma imagem sacra. O documento aponta para a região amazônica.</p>
-        <button class="opcao-escolha" data-proximo="7" data-resposta="correta">Viajar direto para o Amazonas</button>
-    </section>
 
-    <!-- Beco sem saída em Olinda -->
-    <section class="estagio" id="passo-6">
-        <p>A caminhada pela areia te leva até uma fenda rochosa, mas a passagem desmoronou anos atrás, bloqueando o caminho.</p>
-        <button class="opcao-escolha" data-proximo="8" data-resposta="errada">Retornar ao centro e olhar os mosteiros</button>
-    </section>
+        <p>
+            Você encontrou um pergaminho.
+        </p>
 
-    <!-- Chegada ao Amazonas -->
-    <section class="estagio" id="passo-7">
-        <p>O coração da Amazônia guarda os maiores desafios. Navegando de barco, você alcança uma forte bifurcação nas águas do rio.</p>
-        <button class="opcao-escolha" data-proximo="9" data-resposta="correta">Seguir a correnteza da esquerda</button>
-        <button class="opcao-escolha" data-proximo="10" data-resposta="errada">Entrar no canal da direita</button>
-    </section>
-
-    <!-- Retorno em Olinda -->
-    <section class="estagio" id="passo-8">
-        <p>De volta ao circuito histórico, sua persistência compensa e você acha o pergaminho. Próxima parada: Norte do país!</p>
-        <button class="opcao-escolha" data-proximo="7" data-resposta="correta">Ir para o Amazonas</button>
-    </section>
-
-    <!-- Sucesso na Esquerda -->
-    <section class="estagio" id="passo-9">
-        <p>O canal esquerdo deságua em uma queda d'água monumental. Atrás do véu da cachoeira, há portais gravados na rocha que revelam o acesso final.</p>
-        <button class="opcao-escolha" data-proximo="11" data-resposta="correta">Adentrar o santuário esquecido</button>
-    </section>
-
-    <!-- Erro na Direita -->
-    <section class="estagio" id="passo-10">
-        <p>O curso da direita te arrasta para um igapó fechado e perigoso. Sem saída segura, resta apenas dar meia-volta.</p>
-        <button class="opcao-escolha" data-proximo="12" data-resposta="errada">Manobrar o barco para o outro canal</button>
-    </section>
-
-    <!-- Fim de Jogo: Vitória -->
-    <section class="estagio" id="passo-11">
-        <img src="img/santuario-revelado.png" alt="Visão deslumbrante de templos antigos em meio à mata fechada">
-        <p>Você pisa no solo da cidade perdida! Diante de templos colossais e relíquias intactas, você decide viver ali para registrar e proteger essa descoberta histórica.</p>
-    </section>
-
-    <!-- Correção de rota Amazonas -->
-    <section class="estagio" id="passo-12">
-        <p>Corrigindo o rumo para a esquerda, o barulho da água te guia até a grande cachoeira e os portais de pedra.</p>
-        <button class="opcao-escolha" data-proximo="11" data-resposta="correta">Adentrar o santuário esquecido</button>
     </section>
 
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const botoes = document.querySelectorAll(".opcao-escolha");
 
-    botoes.forEach(botao => {
-        botao.addEventListener("click", () => {
-            const resposta = botao.dataset.resposta;
-            const proximoPasso = botao.dataset.proximo;
+const botoes = document.querySelectorAll(".opcao-escolha");
 
-           
+const mensagem = document.getElementById("mensagem");
+
+botoes.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        // pega resposta
+        const resposta = botao.dataset.resposta;
+
+        // mostra correta ou errada
+        if(resposta === "correta"){
+
+            mensagem.innerHTML = "✅ Resposta correta!";
+            mensagem.className = "correta";
+
+        }else{
+
+            mensagem.innerHTML = "❌ Resposta errada!";
+            mensagem.className = "errada";
+
+        }
+
+        // pega próximo passo
+        const proximo = botao.dataset.proximo;
+
+        // remove etapa atual
+        document
+        .querySelector(".visivel")
+        .classList
+        .remove("visivel");
+
+        // mostra próxima etapa
+        document
+        .getElementById(`passo-${proximo}`)
+        .classList
+        .add("visivel");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
